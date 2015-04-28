@@ -2,14 +2,14 @@
 
 json-include is an extended way for JSON to support file including, it has two parts:
 
-1. An expression definition.
+1. A syntax definition called **include syntax**.
 
-2. A Python implementation to parse and build JSON file that contains the expression.
+2. A Python implementation to parse and build JSON file that contains **include syntax**.
 
 
-## The Expression
+## Syntax
 
-json-include support one and only expression, formatted as:
+json-include supports one and only one syntax, formatted as:
 
 ```json
 {
@@ -17,7 +17,7 @@ json-include support one and only expression, formatted as:
 }
 ```
 
-The expression means that this object (the whole `{"...": "include()"}`) in JSON
+The include syntax means that this object (the whole `{"...": "include()"}`) in JSON
 is a reference to the JSON file specified in `include(<json file name>)` notation,
 and should be included into its place.
 
@@ -25,8 +25,8 @@ The included JSON should always be an object (dict) rather than an array (list),
 to prevent implicit meaning and make sure we can get a clear view of the structure
 without looking into the included JSON files.
 
-In a normal JSON when we want to include another JSON on an attribute, the expression
-is write as follows:
+In a normal JSON when we want to include another JSON on an attribute, it should
+be written as follows:
 
 ```json
 {
@@ -48,8 +48,8 @@ if the content of `profile_model.json` is like:
 }
 ```
 
-then what we mean by the expression is that when this JSON is being used
-as a normal JSON, it should be like:
+then what we mean by the include syntax is that, when this JSON is being used
+as a normal JSON, it should be seen as:
 
 ```json
 {
@@ -61,9 +61,9 @@ as a normal JSON, it should be like:
 }
 ```
 
-## The Python Implementation
+## Python Implementation
 
-### Install
+### Installation
 
 ```
 python setup.py install
@@ -80,4 +80,11 @@ python -m json_include test/source_json/ a.json
 The parsed and built result of `a.json` will be printed.
 
 Further usage of `json_include` package is documented in its source code,
-`test/` can also gives you better understandings of how it works.
+`test/` can also give you better understandings of how it works.
+
+
+## TODOs
+
+[ ] Prevent circluar include
+[ ] Test circluar include
+[ ] Test invalid syntax

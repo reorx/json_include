@@ -1,0 +1,21 @@
+{
+    "c0": {
+        "value": "a c0 value",
+        "aaa": {
+            "a0": 1,
+            "a1": "one"
+        }
+    },
+    "bb": [
+        {
+            "aa": {
+                "a0": 1,
+                "a1": "one"
+            },
+            "b0": {
+                "value": "a b0 value"
+            },
+            "b1": true
+        }
+    ]
+}

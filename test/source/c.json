@@ -1,0 +1,13 @@
+{
+    "c0": {
+        "value": "a c0 value",
+        "aaa": {
+            "...": "include(a.json)"
+        }
+    },
+    "bb": [
+        {
+            "...": "include(b.json)"
+        }
+    ]
+}

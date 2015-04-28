@@ -5,6 +5,7 @@ import os
 import re
 import json
 from collections import OrderedDict
+import argparse
 
 
 OBJECT_TYPES = (dict, list)
@@ -70,7 +71,7 @@ def parse_json_include(dirpath, filename, is_include=False):
 def build_json_include(dirpath, filename, indent=4):
     """Parse a json file and build it by the include expression recursively.
 
-    :param str dirpath: The directory path json files are put.
+    :param str dirpath: The directory path of source json files.
     :param str filename: The name of the source json file.
     :return: A json string with its include expression replaced by the indicated data.
     :rtype: str
@@ -83,7 +84,11 @@ def build_json_include_to_files(dirpath, filenames, target_dirpath, indent=4):
     """Build a list of source json files and write the built result into
     target directory path with the same file name they have.
 
-    :param str dirpath: The directory path source json files are put.
+    Since all the included JSON will be cached in the parsing process,
+    this function will be a better way to handle multiple files than build each
+    file seperately.
+
+    :param str dirpath: The directory path of source json files.
     :param list filenames: A list of source json files.
     :param str target_dirpath: The directory path you want to put built result into.
     :rtype: None
@@ -100,6 +105,16 @@ def build_json_include_to_files(dirpath, filenames, target_dirpath, indent=4):
             f.write(json)
 
 
+def main():
+    parser = argparse.ArgumentParser(description='Command line tool to build JSON file by include syntax.')
+
+    parser.add_argument('dirpath', metavar="DIR", help="The directory path of source json files")
+    parser.add_argument('filename', metavar="FILE", help="The name of the source json file")
+
+    args = parser.parse_args()
+
+    print build_json_include(args.dirpath, args.filename)
+
+
 if __name__ == '__main__':
-    #print build_json_include('sample_data', 'test.json')
-    #build_json_include_to_files('sample_data', ['test.json'], 'sample_data_build')
+    main()

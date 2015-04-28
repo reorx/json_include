@@ -5,7 +5,7 @@ from setuptools import setup
 
 
 # Use semantic versioning: MAJOR.MINOR.PATCH
-version = '0.1.2'
+version = '0.1.3'
 
 
 def get_requires():
@@ -24,6 +24,7 @@ setup(
     version=version,
     author='reorx',
     author_email='novoreorx@gmail.com',
+    url='https://github.com/reorx/json_include',
     description='An extension for JSON to support file including',
     long_description=get_long_description(),
     py_modules=[
@@ -33,7 +34,11 @@ setup(
     # packages=find_packages()
     # install_requires=get_requires(),
     # package_data={}
-    # entry_points={}
+    entry_points={
+        'console_scripts': [
+            'json-include=json_include:main'
+        ]
+    },
     license='MIT',
     classifiers=[
         'License :: OSI Approved :: MIT License',

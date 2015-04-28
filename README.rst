@@ -70,20 +70,33 @@ Installation
 
 ::
 
-    python setup.py install
+    pip install json-include
 
 Usage
 ~~~~~
 
-Try running the package as a script::
+By installation a command called ``json-include`` will be registerd as an entry point,
+use it as follows::
 
-    python -m json_include test/source_json/ a.json
+    usage: json-include [-h] DIR FILE
 
-The parsed and built result of ``a.json`` will be printed.
+    Command line tool to build JSON file by include syntax.
+
+    positional arguments:
+      DIR         The directory path of source json files
+      FILE        The name of the source json file
+
+    optional arguments:
+      -h, --help  show this help message and exit
+
+For example::
+
+    json-include test/source_json/ c.json
+
+The parsed and built result of ``c.json`` will be printed.
 
 Further usage of ``json_include`` package is documented in its source code,
-``test/`` can also give you better understandings of how it works.
-
+and ``test/`` can also give you better understandings of how it works.
 
 TODOs
 -----

@@ -11,7 +11,8 @@ json-include is an extended way for JSON to support file including, it has two p
 Syntax
 ------
 
-json-include supports one and only one syntax, formatted as:
+json-include supports an extended syntax called **include syntax** in JSON,
+formatted as:
 
 .. code-block:: json
 

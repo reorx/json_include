@@ -1,0 +1,16 @@
+# Mac #
+.DS_Store
+
+# Vim swap files #
+*.sw[po]
+
+# Byte-compiled
+*.py[cod]
+
+# Distribution / packaging
+/build/
+/dist/
+*.egg-info/
+
+# Others #
+.virtualenv

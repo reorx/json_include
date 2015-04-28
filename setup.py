@@ -15,7 +15,7 @@ def get_requires():
 
 
 def get_long_description():
-    with open('README.md', 'r') as f:
+    with open('README.rst', 'r') as f:
         return f.read()
 
 

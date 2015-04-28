@@ -88,6 +88,6 @@ Further usage of ``json_include`` package is documented in its source code,
 TODOs
 -----
 
-[ ] Prevent circluar include
-[ ] Test circluar include
-[ ] Test invalid syntax
+- [ ] Prevent circluar include
+- [ ] Test circluar include
+- [ ] Test invalid syntax

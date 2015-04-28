@@ -40,7 +40,7 @@ be written as follows:
         }
     }
 
-In this JSON ``profile_model.json`` is included to present ``profile`` attribute,
+In this JSON a ``profile_model.json`` is included to present ``profile`` attribute,
 if the content of ``profile_model.json`` is like:
 
 .. code-block:: json
@@ -63,8 +63,14 @@ as a normal JSON, it should be seen as:
         }
     }
 
+To ture JSON with include syntax into a normal JSON, a build process is needed,
+that's what the implementation does.
+
 Python Implementation
 ---------------------
+
+Implementation could be of any language as long as it can understand the include syntax
+and output as expected, this repo contains a Python implementation for use.
 
 Installation
 ~~~~~~~~~~~~

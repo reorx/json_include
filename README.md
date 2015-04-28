@@ -11,9 +11,11 @@ json-include is a extended way for JSON to support file including, it has two pa
 
 json-include support one and only expression, formated as:
 
-        {
-            "...": "include(<json file name>)"
-        }
+```json
+{
+    "...": "include(<json file name>)"
+}
+```
 
 The expression means that this object (the whole `{"...": "include()"}`) in JSON
 is a reference to the JSON file specified in `include(<json file name>)` notation,
@@ -26,42 +28,53 @@ the structure is like without looking into the included JSON files.
 In normal JSON when we want to include another JSON on an attribute, the expression
 is write as follows:
 
-        {
-            "username": "alice",
-            "profile": {
-                "...": "include(profile_model.json)"
-            }
-        }
+```json
+{
+    "username": "alice",
+    "profile": {
+        "...": "include(profile_model.json)"
+    }
+}
+```
 
 if the content of `profile_model.json` is like:
 
-        {
-            "age": 18,
-            "gender": "female"
-        }
+
+```json
+    {
+        "age": 18,
+        "gender": "female"
+    }
+```
 
 then what we mean by the expression is that the previous JSON should be like this
 when it's being used as a normal JSON:
 
-        {
-            "username": "alice",
-            "profile": {
-                "age": 18,
-                "gender": "female"
-            }
-        }
+```json
+{
+    "username": "alice",
+    "profile": {
+        "age": 18,
+        "gender": "female"
+    }
+}
+```
 
 ## The Python Implementation
 
 ### Install
 
-        python setup.py install
+```
+python setup.py install
+```
 
 ### Usage
 
 Try running the package as a script:
 
-        python -m json_include test/source_json/ a.json
+```
+python -m json_include test/source_json/ a.json
+```
 
 The parsed and built result of a.json will be printed.
 

@@ -1,7 +1,7 @@
-An extension for JSON to support file including
+An extension for JSON to support file inclusion
 ===============================================
 
-json-include is an extended way for JSON to support file including, it has two parts:
+json-include is an extended way for JSON to support file inclusion, it has two parts:
 
 1. A syntax definition called **include syntax**.
 
@@ -108,6 +108,6 @@ and ``test/`` can also give you better understandings of how it works.
 TODOs
 -----
 
-- [ ] Prevent circluar include
-- [ ] Test circluar include
+- [ ] Prevent circluar inclusion
+- [ ] Test circluar inclusion
 - [ ] Test invalid syntax

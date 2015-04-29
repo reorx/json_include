@@ -1,6 +1,6 @@
 {
     "aa": {
-        "...": "include(a.json)"
+        "...": "<a.json>"
     },
     "b0": {
         "value": "a b0 value"

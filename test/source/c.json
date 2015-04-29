@@ -2,12 +2,12 @@
     "c0": {
         "value": "a c0 value",
         "aaa": {
-            "...": "include(a.json)"
+            "...": "<a.json>"
         }
     },
     "bb": [
         {
-            "...": "include(b.json)"
+            "...": "<b.json>"
         }
     ]
 }

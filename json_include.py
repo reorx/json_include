@@ -12,7 +12,7 @@ OBJECT_TYPES = (dict, list)
 
 INCLUDE_KEY = '...'
 
-INCLUDE_VALUE_PATTERN = re.compile(r'^include\(([\w\.]+)\)$')
+INCLUDE_VALUE_PATTERN = re.compile(r'^<([\w\.]+)>$')
 
 _included_cache = {}
 

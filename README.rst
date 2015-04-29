@@ -17,11 +17,11 @@ formatted as:
 .. code-block:: json
 
     {
-        "...": "include(<json file name>)"
+        "...": "<json file name>"
     }
 
-The include syntax means that this object (the whole ``{"...": "include()"}``) in JSON
-is a reference to the JSON file specified in ``include(<json file name>)`` notation,
+The include syntax means that this object (the whole ``{"...": "<json file name>"}``) in JSON
+is a reference to the JSON file named in ``<json file name>`` notation,
 and should be included into its place.
 
 The included JSON should always be an object (dict) rather than an array (list),
@@ -36,7 +36,7 @@ be written as follows:
     {
         "username": "alice",
         "profile": {
-            "...": "include(profile_model.json)"
+            "...": "<profile_model.json>"
         }
     }
 
